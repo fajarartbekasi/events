@@ -24,3 +24,8 @@ Route::group(['prefix' => 'activitys'], function(){
 
     Route::get('create','ActivityController@create')->name('activitys.create');
 });
+
+Route::group(['prefix' => 'registers'], function(){
+    Route::get('index', 'Register\RegistersController@index')->name('registers');
+    Route::get('ambil-formulir', 'Register\RegistersController@create')->name('registers.ambil-formulir');
+});
