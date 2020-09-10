@@ -29,3 +29,7 @@ Route::group(['prefix' => 'registers'], function(){
     Route::get('index', 'Register\RegistersController@index')->name('registers');
     Route::get('ambil-formulir', 'Register\RegistersController@create')->name('registers.ambil-formulir');
 });
+
+Route::group(['prefix' => 'users'], function(){
+    Route::get('index', 'User\UserController@index')->name('users');
+});
