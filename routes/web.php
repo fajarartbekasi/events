@@ -23,11 +23,15 @@ Route::group(['prefix' => 'activitys'], function(){
     Route::get('index', 'ActivityController@index')->name('activitys');
 
     Route::get('create','ActivityController@create')->name('activitys.create');
+
+    Route::get('tampil-formEdit','ActivityController@edit')->name('activitys.tampil-formEdit');
+
 });
 
 Route::group(['prefix' => 'registers'], function(){
     Route::get('index', 'Register\RegistersController@index')->name('registers');
     Route::get('ambil-formulir', 'Register\RegistersController@create')->name('registers.ambil-formulir');
+    Route::get('show','Register\RegistersController@show')->name('registers.show');
 });
 
 Route::group(['prefix' => 'users'], function(){

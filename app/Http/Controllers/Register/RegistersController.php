@@ -15,4 +15,8 @@ class RegistersController extends Controller
     {
         return view('backend.registers.create');
     }
+    public function show()
+    {
+        return view('backend.registers.show');
+    }
 }

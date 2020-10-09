@@ -35,7 +35,7 @@
                                 <td>dsdasdasdas</td>
                                 <td>dadas</td>
                                 <td>
-                                    <a href="http://" class="btn btn-outline-primary btn-sm">Edit</a>
+                                    <a href="{{route('activitys.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">Edit</a>
                                     <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
                                 </td>
                             </tr>

@@ -32,7 +32,7 @@
                                         <td>121120</td>
                                         <td>Waitting</td>
                                         <td>
-                                            <a href="http://" class="btn btn-sm btn-info">Show</a>
+                                            <a href="{{route('registers.show')}}" class="btn btn-sm btn-info">Show</a>
                                         </td>
                                     </tr>
                                 </tbody>
