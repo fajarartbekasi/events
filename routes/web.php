@@ -23,8 +23,9 @@ Route::group(['prefix' => 'activitys'], function(){
     Route::get('index', 'ActivityController@index')->name('activitys');
 
     Route::get('create','ActivityController@create')->name('activitys.create');
-
+    Route::post('save','ActivityController@store')->name('activitys.save');
     Route::get('tampil-formEdit','ActivityController@edit')->name('activitys.tampil-formEdit');
+
 
 });
 
