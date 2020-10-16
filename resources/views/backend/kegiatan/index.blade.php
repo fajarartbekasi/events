@@ -20,25 +20,25 @@
                         <thead>
                             <tr>
                                 <th>Kode kegiatan</th>
-                                <th>Nama Kegiatan</th>
                                 <th>Tanggal</th>
-                                <th>Informasi</th>
                                 <th>Status</th>
                                 <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($activitys as $activity)
                             <tr>
-                                <td>act23424</td>
-                                <td>ok</td>
-                                <td>12/12/12</td>
-                                <td>dsdasdasdas</td>
-                                <td>dadas</td>
+                                <td><a href="{{route('activitys.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">
+                                        {{$activity->code_activity}}
+                                    </a></td>
+                                <td>{{$activity->date}}</td>
+                                <td>{{$activity->status}}</td>
                                 <td>
-                                    <a href="{{route('activitys.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">Edit</a>
+
                                     <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

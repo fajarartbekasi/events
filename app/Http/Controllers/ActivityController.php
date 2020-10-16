@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Activity;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 
 class ActivityController extends Controller
@@ -17,7 +16,9 @@ class ActivityController extends Controller
     }
     public function index()
     {
-        return view('backend.kegiatan.index');
+        $activitys = Activity::all();
+
+        return view('backend.kegiatan.index', compact('activitys'));
 
     }
 
@@ -35,10 +36,11 @@ class ActivityController extends Controller
 
     public function store()
     {
-       $activity = Activity::create($this->validateRequest());
-       $this->storeImage($activity);
+        $momment = Activity::create($this->validateRequest());
 
-       return redirect()->back()->with(['success' => 'Activity berhasil dibuat']);
+       $this->storeImage($momment);
+
+       return redirect()->back()->with(['success' => 'Momment berhasil di tambah']);
     }
 
     private function validateRequest()
@@ -47,26 +49,27 @@ class ActivityController extends Controller
             'code_activity' => 'required',
             'name' => 'required',
             'date' => 'required',
-            'infomation' => 'required',
+            'information' => 'required',
             'status' => 'required',
             'price' => 'required',
-            'images' => 'file|image|max:5000',
             'capacity' => 'required',
+            'images' => 'required|file|image|max:5000',
         ]), function(){
             if(request()->hasFile('images')){
                 request()->validate([
-                    'images'  => 'file|image|max:5000',
+                    'images' => 'required|file|image|max:5000',
                 ]);
+
             }
         });
     }
     private function storeImage($activity){
-        if(request()->has('images')){
+        if (request()->has('images')){
             $activity->update([
-                'images' => request()->images->store('uploads','public'),
+                'images' => request()->images->store('uploads', 'public'),
             ]);
-            $image = Image::make(public_path('storage/'. $activity->images))->fit(300,300,null, 'top-left');
 
+            $image = Image::make(public_path('storage/' . $activity->images))->fit(300, 300, null, 'top-left');
             $image->save();
         }
     }
