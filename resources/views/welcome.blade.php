@@ -27,7 +27,7 @@
                 <a href="" class="nav-link">
                     <h6 class="text-muted">Home</h6>
                 </a>
-                <a href="" class="nav-link">
+                <a href="{{route('users.cek-kegiatan')}}" class="nav-link">
                     <h6 class="text-muted">Kegiatan</h6>
                 </a>
                 <a href="" class="nav-link">

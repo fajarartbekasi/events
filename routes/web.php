@@ -40,4 +40,8 @@ Route::group(['prefix' => 'registers'], function(){
 
 Route::group(['prefix' => 'users'], function(){
     Route::get('index', 'User\UserController@index')->name('users');
+
+    Route::get('cek-kegiatan',
+    'Kegiatan\KegiatanController@index')
+    ->name('users.cek-kegiatan');
 });
