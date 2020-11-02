@@ -10,88 +10,131 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-teal-900 border-bottom">
+            <h3 class="my-0 mr-md-auto font-weight-normal">
+                Event
+            </h3>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a href="" class="p-2 text-dark">Login</a>
+                <a href="" class="p-2 text-dark">Register</a>
+            </nav>
+        </div>
+        <div class="nav-scroller bg-white shadow-sm">
+            <nav class="nav nav-underline ml-4 py-2">
+                <a href="" class="nav-link">
+                    <h6 class="text-muted">Home</h6>
+                </a>
+                <a href="" class="nav-link">
+                    <h6 class="text-muted">Kegiatan</h6>
+                </a>
+                <a href="" class="nav-link">
+                    <h6 class="text-muted">Daftar</h6>
+                </a>
+            </nav>
+        </div>
+        <div class="jumbotron"
+             style="background-image: url('banner/banner.png');">
+            <div class="container">
+                <h3 class="text-center">
+                    Aplikasi Management Kegiatan
+                </h3>
+                <h1 class="display-3 text-center">ABV</h1>
+            </div>
+        </div>
+        <div class="container py-3">
+            <nav  aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item active"
+                        aria-current="page">
+                        Home
+                    </li>
+                </ol>
+            </nav>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw_date_picker_gorr.png')}}"
+                                     alt=""
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h3>Manage Event</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw_my_app_grf2.png')}}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h3>Manage Register</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw_schedule_pnbk.png')}}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h3>Schedule event</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            @endif
+            </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+            <nav  aria-label="breadcrumb" class="pt-3">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item active"
+                        aria-current="page">
+                        Kegiatan
+                    </li>
+                </ol>
+            </nav>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw_date_picker_gorr.png')}}"
+                                     alt=""
+                                     class="card-img-top">
+                                <div class="card-body">
+                                    <h3>Workshop IT</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
+                                    </p>
+                                    <button type="submit" class="btn btn-outline-info btn-block">Daftar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <img src="{{asset('banner/undraw_my_app_grf2.png')}}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h3>MPLH</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
+                                    </p>
+                                    <button type="submit" class="btn btn-outline-danger btn-block" disabled>Daftar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,14 +24,14 @@ class ActivityController extends Controller
 
     public function create()
     {
-        $getKode = $this->activity->generateCode();
 
-        return view('backend.kegiatan.create',
-                compact('getKode'));
+        return view('backend.kegiatan.create');
     }
-    public function edit()
+    public function edit($id)
     {
-        return view('backend.kegiatan.edit');
+        $activity = Activity::findOrFail($id);
+        return view('backend.kegiatan.edit',
+        compact('activity'));
     }
 
     public function store()
@@ -43,10 +43,32 @@ class ActivityController extends Controller
        return redirect()->back()->with(['success' => 'Momment berhasil di tambah']);
     }
 
+    public function update(Activity $activity)
+    {
+        $activity->update($this->validateRequest());
+
+       $this->storeImage($activity);
+
+       return redirect()->back()->with(['success' => 'Momment berhasil di tambah']);
+    }
+    public function destroy(Activity $activity)
+    {
+        $activity->delete();
+
+        if(\File::exists(public_path('storage/'. $activity->images)))
+        {
+            \File::delete(public_path('storage/'. $activity->images));
+        }
+
+        return redirect()
+               ->back()
+               ->with(
+                   ['success' =>
+                   'Activity berhasil di hapus']);
+    }
     private function validateRequest()
     {
         return tap(request()->validate([
-            'code_activity' => 'required',
             'name' => 'required',
             'date' => 'required',
             'information' => 'required',

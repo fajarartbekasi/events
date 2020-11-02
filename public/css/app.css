@@ -10933,3 +10933,22 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  background-color: #CCEEF2;
+}
+
+.bg-teal-900 {
+  color: white;
+  background-color: #2c7a7b;
+}
+
+.ml-4 {
+  margin-left: 10px !important;
+}
+
+.jumbotron {
+  padding: 8rem 14rem;
+  margin-bottom: 2 rem;
+  background-size: 99%;
+}
+

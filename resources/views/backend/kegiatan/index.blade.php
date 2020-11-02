@@ -28,14 +28,20 @@
                         <tbody>
                             @foreach($activitys as $activity)
                             <tr>
-                                <td><a href="{{route('activitys.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">
+                                <td>
+                                    <a href="{{route('activitys.tampil-formEdit', $activity->id)}}" class="btn btn-outline-primary btn-sm">
                                         {{$activity->code_activity}}
-                                    </a></td>
+                                    </a>
+                                </td>
                                 <td>{{$activity->date}}</td>
                                 <td>{{$activity->status}}</td>
                                 <td>
-
-                                    <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                    <form action="{{route('activitys.delete', $activity->id)}}"
+                                          method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

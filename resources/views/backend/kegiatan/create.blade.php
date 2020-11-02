@@ -14,11 +14,7 @@
                                 {{ session('success')}}
                             </div>
                         @endif
-                            <div class="form-group">
-                                <label for="code_activity">Code Activity</label>
-                                <input type="text" name="code_activity" class="form-control" id="title" value="{{$getKode}}" required>
-                                <p class="text-danger">{{ $errors->first('code_activity') }}</p>
-                            </div>
+
                             <div class="form-group">
                                 <label for="name">Judul</label>
                                 <input type="text" name="name" class="form-control" id="name" required>

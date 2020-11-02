@@ -7,20 +7,30 @@
 
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="">
+                    <form action="{{route('activitys.update', $activity->id)}}"
+                          method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PATCH')
                         <div class="row">
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Code Kegiatan</label>
-                                    <input type="text" name="" class="form-control" id="" readonly>
+                                    <input type="text"
+                                           name=""
+                                           class="form-control"
+                                           value="{{$activity->code_activity}}"
+                                           id="" readonly>
                                 </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nama Kegiatan</label>
-                                    <input type="text" name="" class="form-control" id="" readonly>
+                                    <input type="text" name=""
+                                    class="form-control"
+                                    value="{{$activity->name}}"
+                                    id="" readonly>
                                 </div>
 
                             </div>

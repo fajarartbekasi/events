@@ -24,9 +24,12 @@ Route::group(['prefix' => 'activitys'], function(){
 
     Route::get('create','ActivityController@create')->name('activitys.create');
     Route::post('store','ActivityController@store')->name('activitys.store');
-    Route::get('tampil-formEdit','ActivityController@edit')->name('activitys.tampil-formEdit');
+    Route::get('tampil-formEdit/{activity}',
+            'ActivityController@edit')
+           ->name('activitys.tampil-formEdit');
+    Route::patch('update/{activity}','ActivityController@update')->name('activitys.update');
 
-
+    Route::delete('delete/{activity}', 'ActivityController@destroy')->name('activitys.delete');
 });
 
 Route::group(['prefix' => 'registers'], function(){
