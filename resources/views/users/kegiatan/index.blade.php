@@ -14,7 +14,7 @@
         </nav>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mb-2">
                 <div class="card border-0">
                     <div class="card-body">
                         <div class="d-flex">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 mb-2">
                 <div class="card border-0">
                     <div class="card-body">
                         <div class="d-flex">
@@ -59,36 +59,6 @@
                         <button type="submit" class="btn btn-outline-info btn-block">Daftar</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0">
-                        <img src="{{asset('banner/undraw_date_picker_gorr.png')}}"
-                             alt=""
-                             class="card-img-top"
-                             srcset="">
-                    <div class="card-body">
-                        <h3>grozavule Eloquent One-to-Many Relationship</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
-                        </p>
-                        <button type="submit" class="btn btn-outline-info btn-block">Daftar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0">
-                        <img src="{{asset('banner/undraw_date_picker_gorr.png')}}"
-                             alt=""
-                             class="card-img-top"
-                             srcset="">
-                    <div class="card-body">
-                        <h3>How to save info with ajax in php?</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis elit pharetra tristique
-                        </p>
-                        <button type="submit" class="btn btn-outline-info btn-block">Daftar</button>
                     </div>
                 </div>
             </div>
